@@ -8,6 +8,10 @@ class Train extends Component {
   }
 
   componentDidUpdate({ coupes }) {
+    if (this.train.style.fontSize !== '') {
+      return;
+    }
+
     const coupeSize = this.train.children[1].offsetWidth;
     const scale = window.innerWidth / coupes / coupeSize / 10.5;
     this.train.style.fontSize = `${scale}vw`;
