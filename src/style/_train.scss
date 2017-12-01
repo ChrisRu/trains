@@ -88,6 +88,8 @@ $train-height: 10em;
 	}
 
 	&--doors {
+    $border: 0.5em;
+
 		position: absolute;
 		bottom: 0;
 		width: 4em;
@@ -96,9 +98,9 @@ $train-height: 10em;
 		padding: 0;
 		border-top: 2px solid $white;
 		overflow: hidden;
-		border-left: 0.5em solid $white;
-		border-right: 0.5em solid $white;
-		border-radius: $radius;
+		border-left: $border solid $white;
+		border-right: $border solid $white;
+    border-radius: $radius;
 
 		&.gray {
 			.coupe--door {
@@ -128,7 +130,7 @@ $train-height: 10em;
 			.coupe--door-right {
 				transform: translateX($open-percent);
 			}
-		}
+    }
 
 		&-left {
 			left: 25%;
