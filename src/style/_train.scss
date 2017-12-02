@@ -2,293 +2,293 @@ $black: #000;
 $blue: #3535ff;
 $gray: #444;
 $light-gray: #888;
-$white: #FFF;
-$yellow: #FFC905;
+$white: #fff;
+$yellow: #ffc905;
 $window: #1f306b;
 $radius: 0.2em;
 $train-width: 30em;
 $train-height: 10em;
 
 .backwards {
-	transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 .train {
-	font-size: 0.1vw;
+  font-size: 0.1vw;
   display: flex;
   z-index: 5;
-	justify-content: center;
+  justify-content: center;
 }
 
 .coupe {
-	flex: 0 0 auto;
-	height: $train-height;
-	width: $train-width;
-	display: inline-flex;
-	flex-flow: column nowrap;
-	vertical-align: top;
-	position: relative;
-	border-radius: $radius;
+  flex: 0 0 auto;
+  height: $train-height;
+  width: $train-width;
+  display: inline-flex;
+  flex-flow: column nowrap;
+  vertical-align: top;
+  position: relative;
+  border-radius: $radius;
 
-	&:not(:last-child) {
-		$coupe-spacing: 1em;
+  &:not(:last-child) {
+    $coupe-spacing: 1em;
 
-		margin-right: $coupe-spacing;
+    margin-right: $coupe-spacing;
 
-		&::after {
-			content: '';
-			display: block;
-			position: absolute;
-			width: $coupe-spacing;
-			height: 90%;
-			right: -$coupe-spacing;
-			top: 50%;
-			transform: translateY(-50%);
-			background: repeating-linear-gradient(
-				90deg,
-				$light-gray,
-				$gray $coupe-spacing / 5,
-				$light-gray $coupe-spacing / 4,
-				$light-gray $coupe-spacing / 3
-			);
-		}
-	}
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: $coupe-spacing;
+      height: 90%;
+      right: -$coupe-spacing;
+      top: 50%;
+      transform: translateY(-50%);
+      background: repeating-linear-gradient(
+        90deg,
+        $light-gray,
+        $gray $coupe-spacing / 5,
+        $light-gray $coupe-spacing / 4,
+        $light-gray $coupe-spacing / 3
+      );
+    }
+  }
 
-	&--top {
-		background: $blue;
-		flex: 0 1;
-		flex-basis: 10%;
-		border-top-left-radius: $radius;
-		border-top-right-radius: $radius;
-	}
+  &--top {
+    background: $blue;
+    flex: 0 1;
+    flex-basis: 10%;
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+  }
 
-	&--main {
-		flex: 1;
-		background: $white;
-		align-items: center;
-		position: relative;
+  &--main {
+    flex: 1;
+    background: $white;
+    align-items: center;
+    position: relative;
 
-		&-center {
-			position: absolute;
-			top: 50%;
-			transform: translateY(-50%);
-			background: $blue;
-			width: 100%;
-			height: 50%;
-		}
-	}
+    &-center {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: $blue;
+      width: 100%;
+      height: 50%;
+    }
+  }
 
-	&--bottom {
-		flex: 0 1;
-		flex-basis: 10%;
-		background: $gray;
-		border-top: 0.3em solid $yellow;
-		box-sizing: border-box;
-		border-bottom-left-radius: $radius;
-		border-bottom-right-radius: $radius;
-	}
+  &--bottom {
+    flex: 0 1;
+    flex-basis: 10%;
+    background: $gray;
+    border-top: 0.3em solid $yellow;
+    box-sizing: border-box;
+    border-bottom-left-radius: $radius;
+    border-bottom-right-radius: $radius;
+  }
 
-	&--doors {
+  &--doors {
     $border: 0.5em;
 
-		position: absolute;
-		bottom: 0;
-		width: 4em;
-		height: 75%;
-		display: flex;
-		padding: 0;
-		border-top: 2px solid $white;
-		overflow: hidden;
-		border-left: $border solid $white;
-		border-right: $border solid $white;
+    position: absolute;
+    bottom: 0;
+    width: 4em;
+    height: 75%;
+    display: flex;
+    padding: 0;
+    border-top: 2px solid $white;
+    overflow: hidden;
+    border-left: $border solid $white;
+    border-right: $border solid $white;
     border-radius: $radius;
 
-		&.gray {
-			.coupe--door {
-				z-index: 5;
-				background: $gray;
-				transform: none !important;
+    &.gray {
+      .coupe--door {
+        z-index: 5;
+        background: $gray;
+        transform: none !important;
 
-				&-left {
-					border-top-left-radius: $radius;
-				}
+        &-left {
+          border-top-left-radius: $radius;
+        }
 
-				&-right {
-					border-top-right-radius: $radius;
-				}
+        &-right {
+          border-top-right-radius: $radius;
+        }
 
-				&--window {
-					opacity: 0.8;
-				}
-			}
-		}
-
-		&.open {
-			$open-percent: 100%;
-			.coupe--door-left {
-				transform: translateX(-$open-percent);
-			}
-			.coupe--door-right {
-				transform: translateX($open-percent);
-			}
+        &--window {
+          opacity: 0.8;
+        }
+      }
     }
 
-		&-left {
-			left: 25%;
-			transform: translateX(-17.5%);
-		}
+    &.open {
+      $open-percent: 100%;
+      .coupe--door-left {
+        transform: translateX(-$open-percent);
+      }
+      .coupe--door-right {
+        transform: translateX($open-percent);
+      }
+    }
 
-		&-center {
-			left: 50%;
-			transform: translate(-50%);
-		}
+    &-left {
+      left: 25%;
+      transform: translateX(-17.5%);
+    }
 
-		&-right {
-			left: 75%;
-			transform: translateX(-82.5%);
-		}
-	}
+    &-center {
+      left: 50%;
+      transform: translate(-50%);
+    }
 
-	&--door {
-		$delay: 0.5s;
+    &-right {
+      left: 75%;
+      transform: translateX(-82.5%);
+    }
+  }
 
-		position: relative;
-		display: block;
-		background: $yellow;
-		width: 100%;
-		height: 100%;
-		transition: transform $delay ease;
-		z-index: 10;
+  &--door {
+    $delay: 0.5s;
 
-		&-left {
-			border-top-left-radius: $radius;
-		}
+    position: relative;
+    display: block;
+    background: $yellow;
+    width: 100%;
+    height: 100%;
+    transition: transform $delay ease;
+    z-index: 10;
 
-		&-right {
-			border-top-right-radius: $radius;
-		}
+    &-left {
+      border-top-left-radius: $radius;
+    }
 
-		&--window {
-			position: absolute;
-			height: 50%;
-			width: 60%;
-			z-index: 1;
-			margin: 40% 25%;
-			transition: transform $delay ease;
-		}
-	}
+    &-right {
+      border-top-right-radius: $radius;
+    }
 
-	&--windows {
-		width: $train-width / 5;
-		height: 70%;
-		display: flex;
-		padding-left: 0.5em;
-		position: absolute;
-		top: 20%;
+    &--window {
+      position: absolute;
+      height: 50%;
+      width: 60%;
+      z-index: 1;
+      margin: 40% 25%;
+      transition: transform $delay ease;
+    }
+  }
 
-		.coupe--window {
-			flex: 1;
-			height: 100%;
-			width: 70%;
-			margin: 0 0.5em 0 0;
-		}
+  &--windows {
+    width: $train-width / 5;
+    height: 70%;
+    display: flex;
+    padding-left: 0.5em;
+    position: absolute;
+    top: 20%;
 
-		&-left {
-			left: 0;
-		}
+    .coupe--window {
+      flex: 1;
+      height: 100%;
+      width: 70%;
+      margin: 0 0.5em 0 0;
+    }
 
-		&-center {
-			left: 50%;
-			transform: translateX(-50%);
-		}
+    &-left {
+      left: 0;
+    }
 
-		&-right {
-			left: 100%;
-			transform: translateX(-100%);
-		}
+    &-center {
+      left: 50%;
+      transform: translateX(-50%);
+    }
 
-		&-double {
-			width:  $train-width / 2.5;
-		}
+    &-right {
+      left: 100%;
+      transform: translateX(-100%);
+    }
 
-		&-pull-right {
-			left: 17%;
-			transform: translateX(-25%);
-		}
-	}
+    &-double {
+      width: $train-width / 2.5;
+    }
 
-	&--window {
-		background: $window;
-		border-radius: $radius;
-		border: 0.1em solid $black;
-		box-sizing: border-box;
-	}
+    &-pull-right {
+      left: 17%;
+      transform: translateX(-25%);
+    }
+  }
 
-	&-driver {
-		.coupe--top {
-			width: $train-width * 0.775;
-			margin-left: $train-width * 0.225;
-		}
+  &--window {
+    background: $window;
+    border-radius: $radius;
+    border: 0.1em solid $black;
+    box-sizing: border-box;
+  }
 
-		.coupe--bottom {
-			border-bottom-left-radius: 6em;
-			border-bottom-right-radius: $radius;
-		}
+  &-driver {
+    .coupe--top {
+      width: $train-width * 0.775;
+      margin-left: $train-width * 0.225;
+    }
 
-		.coupe--main {
-			border-top-left-radius: 6em;
+    .coupe--bottom {
+      border-bottom-left-radius: 6em;
+      border-bottom-right-radius: $radius;
+    }
 
-			&-center {
-				width: $train-width * 0.9;
-				margin-left: $train-width * 0.1;
-			}
-		}
-	}
+    .coupe--main {
+      border-top-left-radius: 6em;
 
-	&--front {
-		position: absolute;
-		left: 0;
-		z-index: 1;
-		width: $train-width * 0.225;
-		height: 100%;
-		border-top-left-radius: 10em;
-		border-top: 1em solid $blue;
+      &-center {
+        width: $train-width * 0.9;
+        margin-left: $train-width * 0.1;
+      }
+    }
+  }
 
-		&:before {
-			content: '';
-		}
+  &--front {
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    width: $train-width * 0.225;
+    height: 100%;
+    border-top-left-radius: 10em;
+    border-top: 1em solid $blue;
 
-		&-white {
-			position: absolute;
-			display: block;
-			right: 0.8em;
-			background: $white;
-			top: 19%;
-			height: 50%;
-			width: 50%;
-		}
+    &:before {
+      content: '';
+    }
 
-		&-blue {
-			position: absolute;
-			display: block;
-			right: 0.8em;
-			background: $blue;
-			top: 20%;
-			height: 40%;
-			width: 45%;
-			border-top-left-radius: 8em;
-			border-bottom-left-radius: 8em;
-		}
+    &-white {
+      position: absolute;
+      display: block;
+      right: 0.8em;
+      background: $white;
+      top: 19%;
+      height: 50%;
+      width: 50%;
+    }
 
-		&-gray {
-			position: absolute;
-			width: 0;
-			height: 0;
-			bottom: 1.5em;
-			left: 0;
-			border-style: solid;
-			border-width: 1em 0 0 3em;
-			border-color: transparent transparent transparent $gray;
-		}
-	}
+    &-blue {
+      position: absolute;
+      display: block;
+      right: 0.8em;
+      background: $blue;
+      top: 20%;
+      height: 40%;
+      width: 45%;
+      border-top-left-radius: 8em;
+      border-bottom-left-radius: 8em;
+    }
+
+    &-gray {
+      position: absolute;
+      width: 0;
+      height: 0;
+      bottom: 1.5em;
+      left: 0;
+      border-style: solid;
+      border-width: 1em 0 0 3em;
+      border-color: transparent transparent transparent $gray;
+    }
+  }
 }

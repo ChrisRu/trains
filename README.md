@@ -1,4 +1,5 @@
-# Trains
+# Train Crowdedness Visualizer
+Visualize the crowd in a train, so people can enter and leave more quickly.
 
 ## CLI Commands
 

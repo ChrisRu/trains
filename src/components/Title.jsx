@@ -1,8 +1,7 @@
 import React from 'react';
-import { WSAVERNOTSUPPORTED } from 'constants';
 
 const Title = () => (
-	<h1 class="title">Trein Drukte</h1>
+	<h1 class="title">Train Crowdedness Visualizer</h1>
 );
 
 export default Title;
