@@ -15,7 +15,8 @@ $train-height: 10em;
 
 .train {
 	font-size: 0.1vw;
-	display: flex;
+  display: flex;
+  z-index: 5;
 	justify-content: center;
 }
 
