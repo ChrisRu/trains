@@ -22,12 +22,14 @@ class CoupeDriver extends Component {
     this.setState(({ openDoors }) => ({ openDoors: !openDoors }));
   };
 
-  render({ backwards }) {
+  render({ backwards, amount, edit, onEdit, number }) {
     const { openDoors } = this.state;
 
     return (
       <div
-        class={`coupe coupe-driver ${backwards ? 'backwards' : ''}`}
+        class={`coupe coupe-driver ${backwards ? 'backwards' : ''} ${
+          edit ? 'coupe-edit' : ''
+        }`}
         role="button"
         tabIndex={0}
         onClick={this.toggleDoors}>
@@ -49,6 +51,16 @@ class CoupeDriver extends Component {
           <Doors side="center" open={openDoors} />
         </div>
         <div class="coupe--bottom" />
+        {edit && (
+          <input
+            class="edit-amount"
+            type="number"
+            value={amount}
+            onInput={event => {
+              onEdit(event, number);
+            }}
+          />
+        )}
       </div>
     );
   }

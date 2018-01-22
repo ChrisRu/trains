@@ -1,7 +1,5 @@
 .title {
   font-size: 3.8em;
-  width: 100%;
-  text-align: center;
   margin: 0 auto;
   display: block;
   color: $white;
@@ -12,6 +10,9 @@
   margin-top: 1.5em;
   margin-bottom: 1em;
   transition: color 0.2s ease;
+  width: 5em;
+  text-align: center;
+  cursor: pointer;
 
   &:hover {
     color: darken($white, 20%);

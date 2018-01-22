@@ -10,11 +10,11 @@ class Coupe extends Component {
     this.setState(({ openDoors }) => ({ openDoors: !openDoors }));
   };
 
-  render() {
+  render({ edit, amount, onEdit, number }) {
     const { openDoors } = this.state;
     return (
       <div
-        class="coupe"
+        class={`coupe ${edit ? 'coupe-edit' : ''}`}
         role="button"
         tabIndex={0}
         onKeyDown={() => {}}
@@ -30,6 +30,16 @@ class Coupe extends Component {
           <Doors side="right" open={openDoors} />
         </div>
         <div class="coupe--bottom" />
+        {edit && (
+          <input
+            class="edit-amount"
+            type="number"
+            value={amount}
+            onInput={event => {
+              onEdit(event, number);
+            }}
+          />
+        )}
       </div>
     );
   }

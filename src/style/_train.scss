@@ -11,6 +11,10 @@ $train-height: 10em;
 
 .backwards {
   transform: scaleX(-1);
+
+  & input {
+    transform: scaleX(-1);
+  }
 }
 
 .train {
@@ -33,10 +37,6 @@ $train-height: 10em;
   }
 }
 
-.chart-wrapper {
-  display: block;
-}
-
 .coupe {
   flex: 0 0 auto;
   height: $train-height;
@@ -46,6 +46,10 @@ $train-height: 10em;
   vertical-align: top;
   position: relative;
   border-radius: $radius;
+
+  &-edit > *:not(input) {
+    opacity: 0.1;
+  }
 
   &.boring {
     background: $blue;
@@ -419,4 +423,53 @@ $train-height: 10em;
   margin-left: 1.3em;
   margin-bottom: 1em;
   display: block;
+}
+
+@media screen and (max-width: 800px) {
+  .train {
+    margin: 0 2em;
+    padding-right: 2em;
+  }
+}
+
+.edit-amount {
+  position: absolute;
+  bottom: 0;
+  border: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  margin: auto;
+  top: 0;
+  width: 20%;
+}
+
+h2 {
+  display: inline-block;
+}
+
+.edit-button {
+  display: inline-block;
+  margin-left: 1em;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 3px;
+  font-size: 1em;
+  padding: 0.5em 1em;
+  transition: background 0.2s ease;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  svg {
+    width: 1em;
+    height: 1em;
+    margin-right: 0.5em;
+    vertical-align: middle;
+    margin-top: -0.3em;
+  }
+
+  &:hover {
+    background: rgba($white, 0.2);
+  }
 }
