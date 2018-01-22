@@ -2,7 +2,11 @@ import React from 'react';
 
 const Footer = () => (
   <div class="footer">
-    <a href="/" native>
+    <a
+      href="https://www.facebook.com/Step-In-920049101487643"
+      rel="noopener noreferrer"
+      target="_blank"
+      native>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="512"
@@ -19,7 +23,11 @@ const Footer = () => (
         />
       </svg>
     </a>
-    <a href="/" native>
+    <a
+      href="https://www.instagram.com/StepInSystem"
+      target="_blank"
+      rel="noopener noreferrer"
+      native>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="169.063"
@@ -36,6 +44,16 @@ const Footer = () => (
         />
       </svg>
     </a>
+    {/#\/[0-9]+/.test(window.location.hash) &&
+      window.location.hash.includes('admin') === false && (
+        <button
+          class="edit-button"
+          onClick={() => {
+            window.location.hash += '/admin';
+          }}>
+          Admin
+        </button>
+      )}
   </div>
 );
 
