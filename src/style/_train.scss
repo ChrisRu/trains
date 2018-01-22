@@ -473,3 +473,18 @@ h2 {
     background: rgba($white, 0.2);
   }
 }
+
+.train-input {
+  font-size: 0.8em;
+  border: 0;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+
+  &:first-child {
+    margin-right: 1em;
+  }
+
+  &:last-child {
+    margin-left: 1em;
+  }
+}
