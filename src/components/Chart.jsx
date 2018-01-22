@@ -6,6 +6,9 @@ import { transition } from 'd3-transition';
 const width = 100;
 const height = 20;
 
+const getCount = ({ compartments }) =>
+  compartments.map(compartment => compartment.peopleCount / 20);
+
 const generatePoints = data => {
   const points = width / data.length;
 
@@ -28,10 +31,18 @@ class Chart extends Component {
 
   componentDidUpdate() {
     const { data, previousData } = this.props;
+    const points = addStartingPoints(generatePoints(getCount(data)));
 
-    const previousPoints = addStartingPoints(generatePoints(previousData));
-    const points = addStartingPoints(generatePoints(data));
-
+    let previousPoints;
+    if (previousData) {
+      previousPoints = addStartingPoints(
+        generatePoints(getCount(previousData))
+      );
+    } else {
+      previousPoints = addStartingPoints(
+        generatePoints(getCount(data).map(() => 0))
+      );
+    }
     select(this.getDOMNode())
       .select('path')
       .attr('d', this.createArea(previousPoints))
@@ -45,10 +56,13 @@ class Chart extends Component {
     .x(d => d.x)
     .y1(d => (d.y > 0 ? d.y : 0));
 
-  render({ onClick }) {
+  render({ onClick, coupeCount }) {
     return (
       <div class="chart-wrapper" onClick={onClick}>
-        <svg viewBox={`0 0 ${width} ${height}`} class="chart">
+        <svg
+          viewBox={`0 0 ${width} ${height}`}
+          class="chart"
+          style={{ fontSize: `${coupeCount}vh` }}>
           <path />
         </svg>
       </div>

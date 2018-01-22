@@ -1,15 +1,10 @@
 .chart {
-  width: 97vw;
-  margin: 0 auto;
   display: block;
   height: 20vw;
   position: relative;
   z-index: 0;
-
-  &-wrapper {
-    // Use wrapper to center the train vertically (flex)
-    height: 0;
-  }
+  width: 30em;
+  float: left;
 
   * {
     fill: $blue;

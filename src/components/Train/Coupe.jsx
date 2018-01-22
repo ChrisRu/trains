@@ -18,8 +18,7 @@ class Coupe extends Component {
         role="button"
         tabIndex={0}
         onKeyDown={() => {}}
-        onClick={this.toggleDoors}
-      >
+        onClick={this.toggleDoors}>
         <div class="coupe--top" />
         <div class="coupe--main">
           <div class="coupe--main-center">

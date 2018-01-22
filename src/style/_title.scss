@@ -1,7 +1,19 @@
 .title {
-  text-align: center;
+  font-size: 3.8em;
   width: 100%;
-  position: absolute;
-  top: 30%;
-  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  color: $white;
+  z-index: 10;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: darken($white, 20%);
+  }
 }

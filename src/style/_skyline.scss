@@ -1,0 +1,65 @@
+.skyline {
+  position: absolute;
+  bottom: calc(50% - (#{$train-height} / 4));
+  height: calc(50% + (#{$train-height} / 4));
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  overflow: hidden;
+
+  img {
+    z-index: 0;
+    flex: 0 0 auto;
+    width: 150%;
+    display: block;
+    position: relative;
+    animation: slideshow 10s linear infinite;
+    filter: brightness(40%);
+  }
+
+  &-darker {
+    img {
+      filter: brightness(60%);
+      margin-bottom: 19%;
+      animation-duration: 20s;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      background: #999;
+      height: 20%;
+      width: 100%;
+      display: block;
+      bottom: 0;
+    }
+  }
+
+  &-darkest {
+    img {
+      filter: brightness(80%);
+      margin-bottom: 38%;
+      animation-duration: 30s;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      background: #777;
+      height: 40%;
+      width: 100%;
+      display: block;
+      bottom: 0;
+    }
+  }
+}
+
+@keyframes slideshow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

@@ -1,16 +1,26 @@
+$bg: #222;
+
 html,
 body {
   height: 100%;
   width: 100%;
   padding: 0;
   margin: 0;
-  background: #222;
+  background-color: $bg;
   font-family: 'Helvetica Neue', arial, sans-serif;
   font-weight: 400;
   color: #444;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+
+  &:focus {
+    outline: none;
+  }
 }

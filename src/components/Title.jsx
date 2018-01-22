@@ -1,7 +1,10 @@
 import React from 'react';
+import { Link } from 'preact-router/match';
 
-const Title = () => (
-	<h1 class="title">Train Crowdedness Visualizer</h1>
+const Title = ({ value }) => (
+  <Link href="/">
+    <h1 class="title">{value}</h1>
+  </Link>
 );
 
 export default Title;

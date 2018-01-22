@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2876" height="329" viewBox="0 0 2876 329">
+    <use fill="#C4C4C4" transform="translate(1250 31)" xlink:href="#a"/>
+    <use fill="#C4C4C4" transform="translate(1375 155)" xlink:href="#b"/>
+    <use fill="#C4C4C4" transform="translate(1500 74)" xlink:href="#c"/>
+    <use fill="#C4C4C4" transform="translate(1625 229)" xlink:href="#d"/>
+    <use fill="#C4C4C4" transform="translate(1750 155)" xlink:href="#b"/>
+    <use fill="#C4C4C4" transform="translate(1875 54)" xlink:href="#e"/>
+    <use fill="#C4C4C4" transform="translate(2000 86)" xlink:href="#f"/>
+    <use fill="#C4C4C4" transform="translate(2125 31)" xlink:href="#a"/>
+    <use fill="#C4C4C4" transform="translate(2250 145)" xlink:href="#g"/>
+    <use fill="#C4C4C4" transform="translate(2375 31)" xlink:href="#a"/>
+    <use fill="#C4C4C4" transform="matrix(-1 0 0 1 1250 86)" xlink:href="#f"/>
+    <use fill="#C4C4C4" transform="matrix(-1 0 0 1 1125 54)" xlink:href="#e"/>
+    <use fill="#C4C4C4" transform="matrix(-1 0 0 1 1000 132)" xlink:href="#h"/>
+    <use fill="#C4C4C4" transform="matrix(-1 0 0 1 875 0)" xlink:href="#i"/>
+    <use fill="#C4C4C4" transform="matrix(-1 0 0 1 750 155)" xlink:href="#b"/>
+    <use fill="#C4C4C4" transform="matrix(-1 0 0 1 625 54)" xlink:href="#e"/>
+    <use fill="#C4C4C4" transform="matrix(-1 0 0 1 500 132)" xlink:href="#h"/>
+    <use fill="#C4C4C4" transform="matrix(-1 0 0 1 375 31)" xlink:href="#a"/>
+    <use fill="#C4C4C4" transform="matrix(-1 0 0 1 250 74)" xlink:href="#c"/>
+    <use fill="#C4C4C4" transform="matrix(-1 0 0 1 125 31)" xlink:href="#a"/>
+    <use fill="#C4C4C4" transform="translate(2500 108)" xlink:href="#j"/>
+    <use fill="#C4C4C4" transform="translate(2625)" xlink:href="#i"/>
+    <use fill="#C4C4C4" transform="translate(2750 229)" xlink:href="#d"/>
+    <defs>
+        <path id="a" d="M0 0h125v298H0V0z"/>
+        <path id="b" d="M0 0h125v174H0V0z"/>
+        <path id="c" d="M0 0h125v255H0V0z"/>
+        <path id="d" d="M0 0h125v100H0V0z"/>
+        <path id="e" d="M0 0h125v275H0V0z"/>
+        <path id="f" d="M0 0h125v243H0V0z"/>
+        <path id="g" d="M0 0h125v184H0V0z"/>
+        <path id="h" d="M0 0h125v197H0V0z"/>
+        <path id="i" d="M0 0h125v329H0V0z"/>
+        <path id="j" d="M0 0h125v221H0V0z"/>
+    </defs>
+</svg>

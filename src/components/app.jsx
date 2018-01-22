@@ -1,34 +1,87 @@
 import React, { Component } from 'react';
+import Router, { route } from 'preact-router';
+import Match from 'preact-router/match';
 import Title from './Title';
 import Train from './Train';
-import Chart from './Chart';
+import List from './List';
+
+let oldTrain = { compartments: [0, 0, 0, 0, 0] };
 
 class App extends Component {
   state = {
-    previousData: [0, 0, 0, 0, 0, 0],
-    data: [0.5, 0.6, 0.8, 0.3, 0.4, 0.3]
+    trains: [],
+    fetching: true
   };
 
-  getRandomData = () => this.state.data.map(() => Math.random());
+  componentDidMount() {
+    this.fetchData();
 
-  randomData = () => {
+    setInterval(this.fetchData, 100000);
+  }
+
+  fetchData = async () => {
+    const data = await fetch('http://trainemulator.azurewebsites.net/').then(
+      res => res.json()
+    );
+
     this.setState({
-      data: this.getRandomData(),
-      previousData: this.state.data
+      fetching: false,
+      trains: data
     });
   };
 
   render() {
-    const { data, previousData } = this.state;
+    const { trains, fetching } = this.state;
+
     return (
       <div>
-        <Title />
-        <Train coupes={data.length} />
-        <Chart
-          data={data}
-          previousData={previousData}
-          onClick={this.randomData}
+        <Title
+          value="Step In"
+          onClick={() => {
+            route(this.props.to, true);
+          }}
         />
+        {fetching ? (
+          <div class="spinner">
+            <div class="lds-ring">
+              <div />
+              <div />
+              <div />
+              <div />
+            </div>
+            <span>Traindelays...</span>
+          </div>
+        ) : (
+          <Router>
+            <List
+              path="/"
+              trains={trains}
+              onSelect={active => {
+                this.setState(prevState => ({
+                  active,
+                  previousData: prevState.active
+                }));
+              }}
+            />
+            <Match path="/:id">
+              {({ path }) => {
+                const id = path.split('/')[1];
+                const train = trains.find(train => String(train.id) === id);
+                try {
+                  return (
+                    <Train
+                      train={train}
+                      previousTrain={oldTrain}
+                      fetchData={this.fetchData}
+                    />
+                  );
+                } finally {
+                  oldTrain = JSON.parse(JSON.stringify(train));
+                }
+              }}
+            </Match>
+          </Router>
+        )}
       </div>
     );
   }

@@ -12,8 +12,7 @@ export const Doors = ({ side, open, gray }) => (
     <div
       class={`coupe--doors ${gray ? 'gray' : ''} coupe--doors-${side} ${
         open ? 'open' : ''
-      }`}
-    >
+      }`}>
       <Door side="left" />
       <Door side="right" />
     </div>

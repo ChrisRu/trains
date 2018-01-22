@@ -30,9 +30,7 @@ class CoupeDriver extends Component {
         class={`coupe coupe-driver ${backwards ? 'backwards' : ''}`}
         role="button"
         tabIndex={0}
-        onKeyDown={() => {}}
-        onClick={this.toggleDoors}
-      >
+        onClick={this.toggleDoors}>
         <div class="coupe--top" />
         <Front />
         <div class="coupe--main">
