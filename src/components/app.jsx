@@ -19,15 +19,15 @@ class App extends Component {
     setInterval(this.fetchData, 100000);
   }
 
-  fetchData = async () => {
-    const data = await fetch('http://trainemulator.azurewebsites.net/').then(
-      res => res.json()
-    );
-
-    this.setState({
-      fetching: false,
-      trains: data
-    });
+  fetchData = () => {
+    fetch('http://trainemulator.azurewebsites.net/')
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          fetching: false,
+          trains: data
+        });
+      });
   };
 
   render() {
