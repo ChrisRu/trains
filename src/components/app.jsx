@@ -20,7 +20,7 @@ class App extends Component {
   }
 
   fetchData = () => {
-    fetch('http://trainemulator.azurewebsites.net/')
+    fetch('http://trainemulator.azurewebsites.net/api')
       .then(res => res.json())
       .then(data => {
         this.setState({
